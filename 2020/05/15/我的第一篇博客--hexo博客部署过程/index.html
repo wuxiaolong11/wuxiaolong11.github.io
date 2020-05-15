@@ -15,8 +15,8 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言心血来潮构建一个自己的博客，但大部分博客都需要域名跟服务器，找一堆教程终于找到一个没什么成本的博客部署教程。那就是通过github的仓库代理，这样就不需要自己申请域名跟服务器了。具体教程由b站up主codesheep提供视频教程,下面我就是由该教程依样画葫芦，构建自己的第一个博客系统。话不多说,开始。 工具node.js git cnpm安装流程 node.js的安装  网上教程有很多，我是按">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-15T09:40:26.248Z">
-<meta property="article:modified_time" content="2020-05-15T09:39:45.000Z">
+<meta property="article:published_time" content="2020-05-15T09:52:13.851Z">
+<meta property="article:modified_time" content="2020-05-15T09:52:13.843Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -167,7 +167,7 @@
 
         
         <a href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-05-15T09:40:26.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
+  	<time datetime="2020-05-15T09:52:13.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
 </a>
         
       </header>
@@ -214,12 +214,17 @@ cnpm</code></pre><h2 id="安装流程"><a href="#安装流程" class="headerlink
 <p><strong>注意：仓库名称一定要是”github用户名.github.io”，如“zhangsan.github.io”</strong></p>
 </li>
 <li><p>安装git部署插件</p>
-<figure class="highlight plain"><figcaption><span>install --save hexo-deployer-git```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 配置_config.yml</span><br><span class="line"></span><br><span class="line">   用&#96;vim _config.yml&#96;打开&#96;_config.yml&#96;,找到Deployment中的&#96;deploy：&#96;下面内容给为</span><br></pre></td></tr></table></figure>
-<p>type:git<br>repo:xxx.github.io.git #地址为刚才创建的仓库地址<br>branch：master</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. 部署到github</span><br></pre></td></tr></table></figure>
-<p>hexo d  </p>
-<pre><code>
-中途停下时输入自己的github账号以及密码。刷新github仓库就完成了。  </code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置_config.yml</p>
+<p>用<code>vim _config.yml</code>打开<code>_config.yml</code>,找到Deployment中的<code>deploy：</code>下面内容给为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type:git</span><br><span class="line">repo:xxx.github.io.git #地址为刚才创建的仓库地址</span><br><span class="line">branch：master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署到github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>中途停下时输入自己的github账号以及密码。刷新github仓库就完成了。  </p>
+</li>
 <li><p>自定义主题<br>这部分看个人喜好，自己网上搜。</p>
 </li>
 </ol>
