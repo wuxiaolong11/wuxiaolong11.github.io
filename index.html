@@ -159,21 +159,72 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/">我的第一篇博客--hexo博客部署过程</a>
+      <a class="article-title" href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/">我的第一篇博客--hexo博客部署过程</a>
     </h1>
   
 
         
-        <a href="/2020/04/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-04-23T03:27:33.103Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
+        <a href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-05-15T09:40:26.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>心血来潮构建一个自己的博客，但大部分博客都需要域名跟服务器，找一堆教程终于找到一个没什么成本的博客部署教程。<br>那就是通过github的仓库代理，这样就不需要自己申请域名跟服务器了。具体教程由b站up主codesheep提供<a href="https://www.bilibili.com/video/BV1Yb411a7ty?t=1606" target="_blank" rel="noopener">教程</a>,下面我就是由该教程依样画葫芦，构建自己的第一个博客系统。废话不多说开始构建。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>  node.js<br>  git<br>  cnpm</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>心血来潮构建一个自己的博客，但大部分博客都需要域名跟服务器，找一堆教程终于找到一个没什么成本的博客部署教程。<br>那就是通过github的仓库代理，这样就不需要自己申请域名跟服务器了。具体教程由b站up主codesheep提供<a href="https://www.bilibili.com/video/BV1Yb411a7ty?t=1606" target="_blank" rel="noopener">视频教程</a>,下面我就是由该教程依样画葫芦，构建自己的第一个博客系统。话不多说,开始。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><pre><code>node.js
+git
+cnpm</code></pre><h2 id="安装流程"><a href="#安装流程" class="headerlink" title="安装流程"></a>安装流程</h2><ol>
+<li><h3 id="node-js的安装"><a href="#node-js的安装" class="headerlink" title="node.js的安装"></a>node.js的安装</h3></li>
+</ol>
+<p>网上教程有很多，我是按照<a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">菜鸟教程</a>安装的</p>
+<ol start="2">
+<li><h3 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h3><p>Linux平台 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git    #deepinV20系统下不要用git官方教程git-all命令否则会卸载dde文件</span><br></pre></td></tr></table></figure>
+<p>​       Windows平台 </p>
+</li>
+</ol>
+<p>通过<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">官网</a>下载git安装包，执行软件，一路确定即可。详细过程参照这位大佬的<a href="https://blog.csdn.net/qq_32786873/article/details/80570783" target="_blank" rel="noopener">教程</a></p>
+<ol start="3">
+<li><h3 id="cnpm安装"><a href="#cnpm安装" class="headerlink" title="cnpm安装"></a>cnpm安装</h3></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org   #用npm安装cnpm,即国内淘宝源</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><h3 id="Hexo博客框架安装"><a href="#Hexo博客框架安装" class="headerlink" title="Hexo博客框架安装"></a>Hexo博客框架安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>上面hexo博客框架就安装完成了</p>
+<ol start="5">
+<li><h3 id="利用hexo搭建博客"><a href="#利用hexo搭建博客" class="headerlink" title="利用hexo搭建博客"></a>利用hexo搭建博客</h3></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog  #创建一个文件夹放置hexo文件</span><br><span class="line">cd blog     </span><br><span class="line">hexo init   #博客初始化</span><br></pre></td></tr></table></figure>
+<h2 id="博客使用"><a href="#博客使用" class="headerlink" title="博客使用"></a>博客使用</h2><ol>
+<li><h3 id="常用博客命令"><a href="#常用博客命令" class="headerlink" title="常用博客命令"></a>常用博客命令</h3></li>
+</ol>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s				#博客启动，打开产生的地址，既可以看到本地的博客UI</span><br><span class="line">hexo new “博客名称”  #创建新博客，路径为source&#x2F;_posts,内容可自行编辑</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><p>​    如果有自己的云服务器直接部署到服务器即可，像我这种穷学生肯定找不用钱的啦，用到的就是github。以下是部署到github的流程。</p>
+<ol>
+<li><p>打开github创建一个新仓库。</p>
+<p><strong>注意：仓库名称一定要是”github用户名.github.io”，如“zhangsan.github.io”</strong></p>
+</li>
+<li><p>安装git部署插件</p>
+<figure class="highlight plain"><figcaption><span>install --save hexo-deployer-git```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 配置_config.yml</span><br><span class="line"></span><br><span class="line">   用&#96;vim _config.yml&#96;打开&#96;_config.yml&#96;,找到Deployment中的&#96;deploy：&#96;下面内容给为</span><br></pre></td></tr></table></figure>
+<p>type:git<br>repo:xxx.github.io.git #地址为刚才创建的仓库地址<br>branch：master</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. 部署到github</span><br></pre></td></tr></table></figure>
+<p>hexo d  </p>
+<pre><code>
+中途停下时输入自己的github账号以及密码。刷新github仓库就完成了。  </code></pre></li>
+<li><p>自定义主题<br>这部分看个人喜好，自己网上搜。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>​        以上便是所有的教程，再次感谢codesheep这位B站博主，教程也是基本对着他的视频写出来的。</p>
+<p>​        第一次写博客可能有些错别字，希望大家不要怪罪。</p>
 
       
 
@@ -186,7 +237,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/23/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/">展开全文 >></a>
         </p>
       
 
